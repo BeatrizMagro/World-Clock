@@ -1,27 +1,38 @@
 function updateTime() {
-  let losAngelesElement = document.querySelector("#los-angeles");
-  if (losAngelesElement) {
-    let losAngelesDateElement = losAngelesElement.querySelector(".date");
-    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-    let losAngelesCurrentTime = moment().tz("America/Los_Angeles");
+  let budapestElement = document.querySelector("#budapest");
+  if (budapestElement) {
+    let budapestDateElement = budapestElement.querySelector(".date");
+    let budapestTimeElement = budapestElement.querySelector(".time");
+    let budapestCurrentTime = moment().tz("Europe/Budapest");
 
-    losAngelesDateElement.innerHTML =
-      losAngelesCurrentTime.format("MMMM Do YYYY");
-    losAngelesTimeElement.innerHTML = losAngelesCurrentTime.format(
+    budapestDateElement.innerHTML = budapestCurrentTime.format("MMMM Do YYYY");
+    budapestTimeElement.innerHTML = budapestCurrentTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
 
-  let parisElement = document.querySelector("#paris");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisTime = moment().tz("Europe/Paris");
+  let seoulElement = document.querySelector("#seoul");
+  if (seoulElement) {
+    let seoulDateElement = seoulElement.querySelector(".date");
+    let seoulTimeElement = seoulElement.querySelector(".time");
+    let seoulTime = moment().tz("Asia/Seoul");
 
-    parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
-    parisTimeElement.innerHTML = parisTime.format(
+    seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
+    seoulTimeElement.innerHTML = seoulTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
+
+    let acoresElement = document.querySelector("#acores");
+    if (acoresElement) {
+      let acoresDateElement = acoresElement.querySelector(".date");
+      let acoresTimeElement = acoresElement.querySelector(".time");
+      let acoresTime = moment().tz("Atlantic/Azores");
+
+      acoresDateElement.innerHTML = acoresTime.format("MMMM Do YYYY");
+      acoresTimeElement.innerHTML = acoresTime.format(
+        "h:mm:ss [<small>]A[</small>]"
+      );
+    }
   }
 }
 function updateCity(event) {
